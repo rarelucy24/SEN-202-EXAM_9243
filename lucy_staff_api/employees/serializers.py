@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from .models import Manager, Intern, Address
-
+from .models import Manager, Intern, Address   
 class ManagerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Manager

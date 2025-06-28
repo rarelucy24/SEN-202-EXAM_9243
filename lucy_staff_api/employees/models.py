@@ -5,7 +5,7 @@ class StaffBase(models.Model):
     email = models.EmailField(unique=True)
     
     class Meta:
-        abstact = True
+        abstract = True
         
     def get_role(self):
          return "staff"   
@@ -15,8 +15,7 @@ class Manager(StaffBase):
     department = models.CharField(max_length=100)
     has_company_card = models.BooleanField(default=True)
     
-    class Meta:
-        abstact = True
+    
         
     def get_role(self):
          return "Manager"
@@ -25,10 +24,8 @@ class Intern(StaffBase):
      mentor = models.ForeignKey(Manager,on_delete=models.CASCADE,related_name="Internt")
      intership_name = models.DateField()
      
-     class Meta:
-        abstact = True
          
-        def get_role(self):
+def get_role(self):
          return "internt"      
      
 class Address(models.Model):
